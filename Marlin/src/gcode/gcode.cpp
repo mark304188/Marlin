@@ -559,6 +559,10 @@ void GcodeSuite::process_parsed_command(bool no_ok/*=false*/) {
         case 43: M43(); break;                                    // M43: Read pin state
       #endif
 
+      #if defined(ARDUINO_ARCH_MFL) && ENABLED(AUTO_Z_OFFSET)
+        case 44: M44(); break;                                    // M44: Automatic Z probe offset calibration
+      #endif
+
       #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST)
         case 48: M48(); break;                                    // M48: Z probe repeatability test
       #endif

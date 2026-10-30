@@ -727,6 +727,10 @@ private:
     static void M43();
   #endif
 
+  #if defined(ARDUINO_ARCH_MFL) && ENABLED(AUTO_Z_OFFSET)
+    static void M44();
+  #endif
+
   #if ENABLED(Z_MIN_PROBE_REPEATABILITY_TEST)
     static void M48();
   #endif
